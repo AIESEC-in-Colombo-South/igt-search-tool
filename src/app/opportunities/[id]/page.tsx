@@ -152,9 +152,26 @@ export default async function OpportunityDetailsPage({ params }: PageProps) {
               <Button className="w-full h-14 text-lg font-extrabold bg-blue-600 hover:bg-blue-500 shadow-xl shadow-blue-500/20 active:translate-y-0.5">
                 Apply Now
               </Button>
-              <Button variant="outline" className="w-full h-12 border-white/10 bg-transparent text-white/70 hover:bg-white/5 hover:text-white font-bold">
-                Get Guidance
-              </Button>
+              {opportunity.assignedPersonWhatsappUrl ? (
+                <a
+                  href={opportunity.assignedPersonWhatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button variant="outline" className="w-full h-12 border-white/10 bg-transparent text-white/70 hover:bg-white/5 hover:text-white font-bold">
+                    More Info Contact{opportunity.assignedPersonName ? ` (${opportunity.assignedPersonName})` : ""}
+                  </Button>
+                </a>
+              ) : (
+                <Button
+                  variant="outline"
+                  className="w-full h-12 border-white/10 bg-transparent text-white/40 font-bold"
+                  disabled
+                >
+                  More Info Contact
+                </Button>
+              )}
             </div>
           </div>
           

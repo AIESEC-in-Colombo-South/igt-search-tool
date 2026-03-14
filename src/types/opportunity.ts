@@ -43,6 +43,9 @@ export interface Opportunity {
     expectedWorkSchedule?: string;
   };
   imageUrl?: string;
+  assignedPersonName?: string | null;
+  assignedPersonWhatsapp?: string | null;
+  assignedPersonWhatsappUrl?: string | null;
 
   // Computed fields added by normalizer for UI compatibility
   remoteType?: string;

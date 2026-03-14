@@ -69,7 +69,20 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
         )}
       </div>
 
-      <div className="mt-6 pt-5 border-t border-slate-100">
+      <div className="mt-6 space-y-2 border-t border-slate-100 pt-5">
+        {opportunity.assignedPersonWhatsappUrl && (
+          <a
+            href={opportunity.assignedPersonWhatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+          >
+            <Button className="w-full">
+              More Info Contact{opportunity.assignedPersonName ? ` (${opportunity.assignedPersonName})` : ""}
+            </Button>
+          </a>
+        )}
+
         <Link href={`/opportunities/${opportunity.id}`} className="block w-full">
           <Button variant="outline" className="w-full">
             View Details
